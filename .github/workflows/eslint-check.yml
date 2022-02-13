@@ -6,13 +6,12 @@ jobs:
   perform-eslint-check:
     runs-on: ubuntu-latest
     steps:
-        # Check-out repository under GitHub workspace
+      # Check-out repository under GitHub workspace
       - name: Checkout repo
         uses: actions/checkout@v2
         # Install required modules
       - name: Install modules
-        run:  npm install eslint
-        run:  npm install eslint-config-airbnb-base
+        run: npm
         # Perform ESLint repository check
       - name: npx eslint .
         run: make lint
