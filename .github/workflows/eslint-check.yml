@@ -10,8 +10,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         # Install required modules
-      - name: Install modules
-        run: npm
+      - name: Install eslint
+        run: npm install eslint
+      - name: Install eslint-config-airbnb-base
+        run: npm install eslint-config-airbnb-base
         # Perform ESLint repository check
       - name: npx eslint .
         run: make lint
