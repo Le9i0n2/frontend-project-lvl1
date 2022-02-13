@@ -8,3 +8,6 @@ brain-games: # Start brain games
 
 publish:
 	npm publish --dry-run
+
+lint: # Start eslint check
+	npx eslint .
