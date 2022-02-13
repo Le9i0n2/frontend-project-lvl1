@@ -8,4 +8,4 @@
 
 ### GitHub Actions eslint badge:
 
-[![eslint](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check/badge.svg)](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check.yml)
+[![ESLint Status](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check.yml/badge.svg)](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check.yml)
