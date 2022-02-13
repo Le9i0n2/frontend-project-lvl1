@@ -6,4 +6,5 @@ jobs:
   perform-eslint-check:
     runs-on: ubuntu-latest
     steps:
+      - run: cd ../..
       - run: make lint
