@@ -6,4 +6,9 @@ jobs:
   perform-eslint-check:
     runs-on: ubuntu-latest
     steps:
-      - run: make -C ../.. lint
+      # Check-out repository under GitHub workspace
+      - name: checkout repo
+        uses: actions/checkout@v2
+        # Perform ESLint repository check
+      - name: npx eslint .
+        run: make lint
