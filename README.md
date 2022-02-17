@@ -9,3 +9,7 @@
 ### GitHub Actions eslint badge:
 
 [![ESLint Status](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check.yml/badge.svg)](https://github.com/Le9i0n2/frontend-project-lvl1/actions/workflows/eslint-check.yml)
+
+### Brain-even asciinema
+
+[![asciicast](https://asciinema.org/a/8ECSimjvWleC2xPjlsDyuLayz.png)](https://asciinema.org/a/8ECSimjvWleC2xPjlsDyuLayz)

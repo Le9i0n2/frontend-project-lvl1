@@ -1,1 +1,4 @@
 /node_modules/
+
+# Ignore asciinema files
+brain-even-test
