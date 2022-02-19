@@ -13,3 +13,7 @@
 ### Brain-even asciinema
 
 [![asciicast](https://asciinema.org/a/8ECSimjvWleC2xPjlsDyuLayz.png)](https://asciinema.org/a/8ECSimjvWleC2xPjlsDyuLayz)
+
+### Brain-calc asciinema
+
+[![asciicast](https://asciinema.org/a/4cGHkjR9SCSQ0zsUYHKPlbN4u.png)](https://asciinema.org/a/4cGHkjR9SCSQ0zsUYHKPlbN4u)
