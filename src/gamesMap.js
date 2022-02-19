@@ -23,8 +23,8 @@ const games = {
       console.log('What is the result of the expression?');
     },
     'question-and-answer': () => {
-      const num1 = getRnd();
-      const num2 = getRnd();
+      const num1 = getRnd(1, 50);
+      const num2 = getRnd(1, 10);
       const sign = getRndSign();
       const question = `${num1} ${sign} ${num2}`;
       const answer = calcMap[sign](num1, num2);
