@@ -1,3 +1,4 @@
-// Return random int number from 1 to 100
+// Return random int number (from 1 to 100 by default)
 
-export default () => Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+// prettier-ignore
+export default (min = 1, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;

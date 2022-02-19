@@ -1,11 +1,12 @@
 {
   "name": "@hexlet/code",
-  "version": "2.1.0",
+  "version": "3.2.0",
   "type": "module",
   "description": "Console game",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "main": "index.js",
   "scripts": {
