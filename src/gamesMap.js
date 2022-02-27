@@ -6,6 +6,8 @@ import getRnd from './getRandomInt.js';
 import isEven from './isEven.js';
 import getRndSign from './getRandomMathSign.js';
 import calcMap from './calcMap.js';
+import getNumsWithCD from './getNumsWithCD.js';
+import getGCD from './getGCD.js';
 
 const games = {
   'brain-even': {
@@ -28,6 +30,19 @@ const games = {
       const sign = getRndSign();
       const question = `${num1} ${sign} ${num2}`;
       const answer = calcMap[sign](num1, num2);
+      return [question, answer];
+    },
+  },
+  'brain-gcd': {
+    'start-phrase': () => {
+      console.log('Find the greatest common divisor of given numbers.');
+    },
+    'question-and-answer': () => {
+      const commonDivisor = getRnd(1, 5);
+      const num1 = getNumsWithCD(commonDivisor);
+      const num2 = getNumsWithCD(commonDivisor);
+      const question = `${num1} ${num2}`;
+      const answer = getGCD(num1, num2);
       return [question, answer];
     },
   },
