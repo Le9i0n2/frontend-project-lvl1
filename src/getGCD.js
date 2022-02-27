@@ -11,6 +11,10 @@ export default (num1, num2) => {
   const smallerNum = greaterNum === num1 ? num2 : num1;
   const modulo = greaterNum % smallerNum;
 
+  if (modulo === 0) {
+    return smallerNum;
+  }
+
   const iter = (num, mod) => {
     if (num % mod === 0) {
       return mod;
