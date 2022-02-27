@@ -9,6 +9,7 @@ import calcMap from './calcMap.js';
 import getNumsWithCD from './getNumsWithCD.js';
 import getGCD from './getGCD.js';
 import getRandomProgression from './getRandomProgression.js';
+import isPrime from './isPrime.js';
 
 const games = {
   'brain-even': {
@@ -57,6 +58,19 @@ const games = {
       const answer = progression[randomElementID];
       progression[randomElementID] = '..';
       const question = progression.join(' ');
+      return [question, answer];
+    },
+  },
+  'brain-prime': {
+    'start-phrase': () => {
+      console.log(
+        // eslint-disable-next-line comma-dangle
+        'Answer "yes" if given number is prime. Otherwise answer "no".'
+      );
+    },
+    'question-and-answer': () => {
+      const question = getRnd(2, 100);
+      const answer = isPrime(question);
       return [question, answer];
     },
   },
