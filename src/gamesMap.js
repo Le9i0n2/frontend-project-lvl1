@@ -8,6 +8,7 @@ import getRndSign from './getRandomMathSign.js';
 import calcMap from './calcMap.js';
 import getNumsWithCD from './getNumsWithCD.js';
 import getGCD from './getGCD.js';
+import getRandomProgression from './getRandomProgression.js';
 
 const games = {
   'brain-even': {
@@ -43,6 +44,19 @@ const games = {
       const num2 = getNumsWithCD(commonDivisor);
       const question = `${num1} ${num2}`;
       const answer = getGCD(num1, num2);
+      return [question, answer];
+    },
+  },
+  'brain-progression': {
+    'start-phrase': () => {
+      console.log('What number is missing in the progression?');
+    },
+    'question-and-answer': () => {
+      const progression = getRandomProgression();
+      const randomElementID = getRnd(0, progression.length - 1);
+      const answer = progression[randomElementID];
+      progression[randomElementID] = '..';
+      const question = progression.join(' ');
       return [question, answer];
     },
   },
