@@ -1,5 +1,5 @@
 // Return number with specified common divisor
 
-import getRnd from './getRandomInt.js';
+import getRandomInt from './getRandomInt.js';
 
-export default (commonDivisor) => commonDivisor * getRnd(1, 20);
+export default (commonDivisor) => commonDivisor * getRandomInt(1, 20);

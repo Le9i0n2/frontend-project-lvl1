@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import helloUser from '../src/cli.js';
-import gcdGame from '../src/index.js';
+import gcdGame from '../src/games/gcdGame.js';
 
-const userName = helloUser();
-const game = 'brain-gcd';
-gcdGame(userName, game);
+gcdGame();
