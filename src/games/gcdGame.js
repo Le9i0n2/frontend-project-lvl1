@@ -1,6 +1,6 @@
 // Logic for brain-gcd game
 
-import index1 from '../index1.js';
+import index from '../index.js';
 import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
 import getNumsWithCD from '../getNumsWithCD.js';
@@ -16,7 +16,7 @@ export default () => {
     const num2 = getNumsWithCD(commonDivisor);
     const question = `${num1} ${num2}`;
     const correctAnswer = getGCD(num1, num2);
-    const [userAnswer, result] = index1(userName, question, correctAnswer);
+    const [userAnswer, result] = index(userName, question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle

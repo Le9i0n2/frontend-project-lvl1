@@ -1,6 +1,6 @@
 // Logic for brain-progression game
 
-import index1 from '../index1.js';
+import index from '../index.js';
 import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
 import getRandomProgression from '../getRandomProgression.js';
@@ -16,7 +16,7 @@ export default () => {
     // Hide our choosen element
     progression[randomElementID] = '..';
     const question = progression.join(' ');
-    const [userAnswer, result] = index1(userName, question, correctAnswer);
+    const [userAnswer, result] = index(userName, question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle

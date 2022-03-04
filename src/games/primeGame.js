@@ -1,6 +1,6 @@
 // Logic for brain-prime game
 
-import index1 from '../index1.js';
+import index from '../index.js';
 import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
 import isPrime from '../isPrime.js';
@@ -11,7 +11,7 @@ export default () => {
   for (let i = 0; i < 3; i += 1) {
     const question = getRandomInt(2, 100);
     const correctAnswer = isPrime(question);
-    const [userAnswer, result] = index1(userName, question, correctAnswer);
+    const [userAnswer, result] = index(userName, question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle
