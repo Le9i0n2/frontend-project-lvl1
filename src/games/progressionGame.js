@@ -16,7 +16,7 @@ export default () => {
     // Hide our choosen element
     progression[randomElementID] = '..';
     const question = progression.join(' ');
-    const [userAnswer, result] = index(userName, question, correctAnswer);
+    const [userAnswer, result] = index(question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle

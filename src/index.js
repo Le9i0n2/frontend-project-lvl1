@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 
-export default (userName, question, correctAnswer) => {
+export default (question, correctAnswer) => {
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
   let result;

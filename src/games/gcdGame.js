@@ -16,7 +16,7 @@ export default () => {
     const num2 = getNumsWithCD(commonDivisor);
     const question = `${num1} ${num2}`;
     const correctAnswer = getGCD(num1, num2);
-    const [userAnswer, result] = index(userName, question, correctAnswer);
+    const [userAnswer, result] = index(question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle

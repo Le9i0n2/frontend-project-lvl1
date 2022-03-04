@@ -11,7 +11,7 @@ export default () => {
   for (let i = 0; i < 3; i += 1) {
     const question = getRandomInt(2, 100);
     const correctAnswer = isPrime(question);
-    const [userAnswer, result] = index(userName, question, correctAnswer);
+    const [userAnswer, result] = index(question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle

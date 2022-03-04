@@ -16,7 +16,7 @@ export default () => {
     const sign = getRandomMathSign();
     const question = `${num1} ${sign} ${num2}`;
     const correctAnswer = calcMap[sign](num1, num2);
-    const [userAnswer, result] = index(userName, question, correctAnswer);
+    const [userAnswer, result] = index(question, correctAnswer);
     if (!result) {
       return console.log(
         // eslint-disable-next-line comma-dangle
