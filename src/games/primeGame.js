@@ -1,25 +1,31 @@
 // Logic for brain-prime game
 
 import index from '../index.js';
-import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
-import isPrime from '../isPrime.js';
+
+// Check if a number is prime. Return 'yes' or 'no'
+const isPrime = (num) => {
+  const halfOfNum = Math.ceil(num / 2);
+  for (let i = 2; i <= halfOfNum; i += 1) {
+    if (num % i === 0) {
+      return 'no';
+    }
+  }
+
+  return 'yes';
+};
 
 export default () => {
-  const userName = helloUser();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  // Set rules for the game
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const gameData = [];
+  // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < 3; i += 1) {
     const question = getRandomInt(2, 100);
     const correctAnswer = isPrime(question);
-    const [userAnswer, result] = index(question, correctAnswer);
-    if (!result) {
-      return console.log(
-        // eslint-disable-next-line comma-dangle
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
-      );
-    }
-    console.log('Correct!');
+    gameData.push([question, correctAnswer]);
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  // Start the game
+  index(rules, gameData);
 };
