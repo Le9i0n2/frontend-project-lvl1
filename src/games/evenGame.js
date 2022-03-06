@@ -1,25 +1,28 @@
 // Logic for brain-even game
 
 import index from '../index.js';
-import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
-import isEven from '../isEven.js';
+
+// Check is the number even or not. Return 'yes' or 'no'
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+
+  return 'no';
+};
 
 export default () => {
-  const userName = helloUser();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  // Set rules for the game
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const gameData = [];
+  // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < 3; i += 1) {
     const question = getRandomInt();
     const correctAnswer = isEven(question);
-    const [userAnswer, result] = index(question, correctAnswer);
-    if (!result) {
-      return console.log(
-        // eslint-disable-next-line comma-dangle
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
-      );
-    }
-    console.log('Correct!');
+    gameData.push([question, correctAnswer]);
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  // Start the game
+  index(rules, gameData);
 };
