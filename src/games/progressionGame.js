@@ -1,30 +1,36 @@
 // Logic for brain-progression game
 
 import index from '../index.js';
-import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
-import getRandomProgression from '../getRandomProgression.js';
+
+// Return random math progression with random length (from 5 to 10 symbols)
+const getRandomProgression = () => {
+  const start = getRandomInt(1, 50);
+  const step = getRandomInt(2, 5);
+  const length = getRandomInt(4, 9);
+  const result = [start];
+  for (let i = 0; i < length; i += 1) {
+    const newNum = result[i] + step;
+    result.push(newNum);
+  }
+
+  return result;
+};
 
 export default () => {
-  const userName = helloUser();
-  console.log('What number is missing in the progression?');
+  // Set rules for the game
+  const rules = 'What number is missing in the progression?';
+  const gameData = [];
+  // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < 3; i += 1) {
-    // Generate random progression and choose random element for question
     const progression = getRandomProgression();
     const randomElementID = getRandomInt(0, progression.length - 1);
     const correctAnswer = progression[randomElementID];
-    // Hide our choosen element
     progression[randomElementID] = '..';
     const question = progression.join(' ');
-    const [userAnswer, result] = index(question, correctAnswer);
-    if (!result) {
-      return console.log(
-        // eslint-disable-next-line comma-dangle
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
-      );
-    }
-    console.log('Correct!');
+    gameData.push([question, correctAnswer]);
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  // Start the game
+  index(rules, gameData);
 };
