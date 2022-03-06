@@ -1,15 +1,36 @@
-// Present logic for gameplay
+// Logic for all games
 
 import readlineSync from 'readline-sync';
 
-export default (question, correctAnswer) => {
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  let result;
-  if (userAnswer !== String(correctAnswer)) {
-    result = false;
-  } else {
-    result = true;
+export default (rules, gameData) => {
+  // Greet new user and ask about his/her name
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+
+  // Talk about the rules of the game
+  console.log(rules);
+
+  // Playing game
+  for (let i = 0; i < gameData.length; i += 1) {
+    // Getting set of data (question and answer)
+    const [question, correctAnswer] = gameData[i];
+
+    // Ask a question and get an answer
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    // Compare answers
+    if (userAnswer !== String(correctAnswer)) {
+      return console.log(
+        // eslint-disable-next-line comma-dangle
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
+      );
+    }
+
+    // Tell user that his answer was correct
+    console.log('Correct!');
   }
-  return [userAnswer, result];
+
+  return console.log(`Congratulations, ${userName}!`);
 };
