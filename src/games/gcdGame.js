@@ -1,30 +1,51 @@
 // Logic for brain-gcd game
 
 import index from '../index.js';
-import helloUser from '../cli.js';
 import getRandomInt from '../getRandomInt.js';
-import getNumsWithCD from '../getNumsWithCD.js';
-import getGCD from '../getGCD.js';
+
+// Return number with specified common divisor
+const getNumsWithCD = (commonDivisor) => commonDivisor * getRandomInt(1, 20);
+
+/** Return greatest common divisor of two given numbers
+ * Euclidean algorithm was used for search
+ * */
+const getGCD = (num1, num2) => {
+  if (num1 === num2) {
+    return num1;
+  }
+
+  const greaterNum = num1 > num2 ? num1 : num2;
+  const smallerNum = greaterNum === num1 ? num2 : num1;
+  const modulo = greaterNum % smallerNum;
+
+  if (modulo === 0) {
+    return smallerNum;
+  }
+
+  const iter = (num, mod) => {
+    if (num % mod === 0) {
+      return mod;
+    }
+    return iter(mod, num % mod);
+  };
+
+  return iter(smallerNum, modulo);
+};
 
 export default () => {
-  const userName = helloUser();
-  console.log('Find the greatest common divisor of given numbers.');
+  // Set rules for the game
+  const rules = 'Find the greatest common divisor of given numbers.';
+  const gameData = [];
+  // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < 3; i += 1) {
-    // Generate two random nums with at least one common divisor
     const commonDivisor = getRandomInt(1, 5);
     const num1 = getNumsWithCD(commonDivisor);
     const num2 = getNumsWithCD(commonDivisor);
     const question = `${num1} ${num2}`;
     const correctAnswer = getGCD(num1, num2);
-    const [userAnswer, result] = index(question, correctAnswer);
-    if (!result) {
-      return console.log(
-        // eslint-disable-next-line comma-dangle
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
-      );
-    }
-    console.log('Correct!');
+    gameData.push([question, correctAnswer]);
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  // Start the game
+  index(rules, gameData);
 };
