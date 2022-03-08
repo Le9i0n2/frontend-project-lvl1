@@ -5,8 +5,8 @@ import getRandomInt from '../getRandomInt.js';
 
 // Check if a number is prime. Return 'yes' or 'no'
 const isPrime = (num) => {
-  if (num === 1) {
-    return true;
+  if (num < 2) {
+    return false;
   }
 
   const halfOfNum = Math.ceil(num / 2);
