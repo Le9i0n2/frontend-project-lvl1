@@ -1,15 +1,15 @@
 // Logic for brain-even game
 
-import index from '../index.js';
+import playGame, { gameRounds } from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 // Check is the number even or not. Return 'yes' or 'no'
 const isEven = (num) => {
   if (num % 2 === 0) {
-    return 'yes';
+    return true;
   }
 
-  return 'no';
+  return false;
 };
 
 export default () => {
@@ -17,12 +17,12 @@ export default () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
   const gameData = [];
   // Getting set of game data (three pairs question-correctAnswer)
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < gameRounds; i += 1) {
     const question = getRandomInt();
-    const correctAnswer = isEven(question);
+    const correctAnswer = isEven(question) ? 'yes' : 'no';
     gameData.push([question, correctAnswer]);
   }
 
   // Start the game
-  index(rules, gameData);
+  playGame(rules, gameData);
 };
