@@ -2,6 +2,9 @@
 
 import readlineSync from 'readline-sync';
 
+// Number of game rounds
+export const gameRounds = 3;
+
 export default (rules, gameData) => {
   // Greet new user and ask about his/her name
   console.log('Welcome to the Brain Games!');
@@ -22,15 +25,16 @@ export default (rules, gameData) => {
 
     // Compare answers
     if (userAnswer !== String(correctAnswer)) {
-      return console.log(
+      console.log(
         // eslint-disable-next-line comma-dangle
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
       );
+      return;
     }
 
     // Tell user that his answer was correct
     console.log('Correct!');
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
