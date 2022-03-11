@@ -3,7 +3,7 @@
 import playGame, { gameRounds } from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
-// Check is the number even or not. Return 'yes' or 'no'
+// Check is the number even or not. Return boolean
 const isEven = (num) => {
   if (num % 2 === 0) {
     return true;

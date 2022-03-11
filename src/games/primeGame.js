@@ -3,7 +3,7 @@
 import playGame, { gameRounds } from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
-// Check if a number is prime. Return 'yes' or 'no'
+// Check if a number is prime. Return boolean
 const isPrime = (num) => {
   if (num < 2) {
     return false;
