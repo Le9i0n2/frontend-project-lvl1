@@ -18,8 +18,8 @@ const getMathProgression = (start, step, length) => {
 };
 
 export default () => {
-  // Set rules for the game
-  const rules = 'What number is missing in the progression?';
+  // Set rule for the game
+  const rule = 'What number is missing in the progression?';
   const gameData = [];
   // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < gameRounds; i += 1) {
@@ -39,5 +39,5 @@ export default () => {
   }
 
   // Start the game
-  playGame(rules, gameData);
+  playGame(rule, gameData);
 };

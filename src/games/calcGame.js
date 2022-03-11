@@ -14,8 +14,8 @@ const calcMap = {
 const mathSigns = ['+', '-', '*'];
 
 export default () => {
-  // Set rules for the game
-  const rules = 'What is the result of the expression?';
+  // Set rule for the game
+  const rule = 'What is the result of the expression?';
   const gameData = [];
   // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < gameRounds; i += 1) {
@@ -28,5 +28,5 @@ export default () => {
   }
 
   // Start the game
-  playGame(rules, gameData);
+  playGame(rule, gameData);
 };

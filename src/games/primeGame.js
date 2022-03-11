@@ -20,8 +20,8 @@ const isPrime = (num) => {
 };
 
 export default () => {
-  // Set rules for the game
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  // Set rule for the game
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const gameData = [];
   // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < gameRounds; i += 1) {
@@ -31,5 +31,5 @@ export default () => {
   }
 
   // Start the game
-  playGame(rules, gameData);
+  playGame(rule, gameData);
 };

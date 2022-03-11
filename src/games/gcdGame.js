@@ -30,8 +30,8 @@ const getGCD = (num1, num2) => {
 };
 
 export default () => {
-  // Set rules for the game
-  const rules = 'Find the greatest common divisor of given numbers.';
+  // Set rule for the game
+  const rule = 'Find the greatest common divisor of given numbers.';
   const gameData = [];
   // Getting set of game data (three pairs question-correctAnswer)
   for (let i = 0; i < gameRounds; i += 1) {
@@ -44,5 +44,5 @@ export default () => {
   }
 
   // Start the game
-  playGame(rules, gameData);
+  playGame(rule, gameData);
 };
