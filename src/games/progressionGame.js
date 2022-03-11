@@ -5,7 +5,7 @@ import getRandomInt from '../getRandomInt.js';
 
 /**
  * Return math progression with specified start value, step and length
- * Actual length equals length + starting value
+ * Actual length equals length + 1 (1 for starting value)
  */
 const getMathProgression = (start, step, length) => {
   const result = [start];
